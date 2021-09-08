@@ -28,8 +28,8 @@ button.addEventListener('click', function(){
                 let dateObject = new Date(millisec);
                 let humanDateFormat = dateObject.toLocaleString();
             let currentIcon = data["weather"][0]["icon"];
-                fetch("http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
-                .then(response => response.json())
+                //fetch("http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
+                //.then(response => response.json())
 
             let tempValue = "Temp: " + data["main"]["temp"];
             let windValue = "Wind: " + data["wind"]["speed"];
@@ -111,8 +111,12 @@ function init() {
   // Add submit event to form
 cityInput.addEventListener("submit", function(event) {
     event.preventDefault();
-  
-    let searchText = cityInput.value.trim();
+    fetch("https://api.openweathermap.org/data/2.5/weather?q="+inputValue.value+"&units=imperial&appid=273d63378f5060d2e6ef12503c6f1cfe")
+    .then(response => response.json())
+    //check -- .then(data => console.log(data))
+    .then(data => {
+        let searchText = data["name"];
+    //let searchText = cityInput.value;
   
     // Return from function early if blank
     if (searchText === "") {
@@ -143,7 +147,6 @@ storeCities.addEventListener("click", function(event) {
       renderSearch();
     }
   });
-  
+});
   // Calls init to retrieve data and render it to the page on load
   init()
-  
