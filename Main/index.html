@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Title of project-->
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body class = "row">
+  <h1>Weather Dashboard</h1>
+  <aside class = "col s4">
+    <h3>Search for a City:</h3>
+    <form id = "form" method="POST">
+    <input id="city-input" type ="text" class ="form-input" placeholder="search"/>
+    <button class ="search-btn btn indigo" type ="submit">Search</button>
+  </form>
+    <ul class = "store-cities"></ul>
+  </aside>
+
+  <main class="display col s7">
+    <h3 class="cityName date"></h3>
+    <p class="temp"></p>
+    <br>
+    <p class="wind"></p>
+    <br>
+    <p class="humidity"></p>
+    <br>
+    <p class="uvIndex"></p>
+    <br>
+  </main>
+
+  <section class = "col s7">
+    <h4>5-Day Forecast:</h4>
+    <div class="row">
+      <div class="col forecast "></div>
+      <div class="col forecast "></div>
+      <div class="col forecast "></div>
+      <div class="col forecast "></div>
+      <div class="col forecast "></div>
+  </div>
+
+  </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
